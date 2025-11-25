@@ -1,0 +1,260 @@
+/**
+ * @name Christmas Matter
+ * @author Tu Nombre
+ * @version 1.0.0
+ * @description Un tema navideño cálido y festivo inspirado en Dark Matter
+ * @source https://github.com/TuUsuario/ChristmasMatter/
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+/* Variables Navideñas */
+:root {
+    --avatar-size: 32px;
+    
+    /* Imágenes de fondo navideñas */
+    --background-image: url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=1920&q=80');
+    --home-image: url('https://media.giphy.com/media/3o6fJ1BM7R2EBRDnxK/giphy.gif');
+    
+    /* Colores base navideños */
+    --background-solid: #1a0f0f;
+    --background-solid-dark: #0f0808;
+    --background-solid-darker: #0a0505;
+    
+    /* Colores de acento - Rojo y verde navideño */
+    --accent: 220, 38, 38;
+    --accent-alt: 34, 139, 34;
+    --accent-gold: 255, 215, 0;
+    
+    /* Colores adicionales */
+    --christmas-red: #dc2626;
+    --christmas-green: #228b22;
+    --christmas-gold: #ffd700;
+    --christmas-snow: #f0f9ff;
+    --christmas-dark-red: #991b1b;
+}
+
+/* Fondo principal con overlay navideño */
+.app-2CXKsg,
+.bg-1QIAus {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.app-2CXKsg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(34, 139, 34, 0.1));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Efecto de nieve cayendo */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0.3;
+    }
+}
+
+/* Barras laterales con tema navideño */
+.sidebar-1tnWFu,
+.container-2o3qEW,
+.privateChannels-oVe7HL {
+    background: rgba(26, 15, 15, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-right: 2px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Lista de servidores */
+.guilds-2JjMmN {
+    background: rgba(15, 8, 8, 0.9) !important;
+    border-right: 2px solid var(--christmas-gold);
+}
+
+/* Iconos de servidor con brillo navideño */
+.wrapper-3kah-n:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.wrapper-3kah-n.selected-1sf9UK::before {
+    background: linear-gradient(90deg, var(--christmas-red), var(--christmas-green));
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Área de chat */
+.chat-2ZfjoI,
+.container-2cd8Mz {
+    background: rgba(26, 15, 15, 0.75) !important;
+}
+
+/* Mensajes con fondo navideño sutil */
+.message-2CShn3:hover {
+    background: rgba(220, 38, 38, 0.1) !important;
+    border-left: 3px solid var(--christmas-gold);
+}
+
+/* Caja de texto con tema navideño */
+.channelTextArea-1FufC0 {
+    background: rgba(15, 8, 8, 0.8) !important;
+    border: 2px solid rgba(34, 139, 34, 0.4);
+    border-radius: 8px;
+}
+
+.channelTextArea-1FufC0:focus-within {
+    border-color: var(--christmas-red);
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
+}
+
+/* Botones con estilo navideño */
+.button-f2h6uQ,
+.lookFilled-yCfaCM {
+    background: linear-gradient(135deg, var(--christmas-red), var(--christmas-dark-red)) !important;
+    border: 1px solid var(--christmas-gold);
+    transition: all 0.3s ease;
+}
+
+.button-f2h6uQ:hover,
+.lookFilled-yCfaCM:hover {
+    background: linear-gradient(135deg, var(--christmas-dark-red), var(--christmas-red)) !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Nombres de usuario con colores festivos */
+.username-h_Y3Us {
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Scrollbar navideña */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--christmas-red), var(--christmas-green)) !important;
+    border: 2px solid var(--christmas-gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--christmas-green), var(--christmas-red)) !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 8, 8, 0.5) !important;
+}
+
+/* Panel de usuarios con decoración */
+.members-3WRCEx {
+    background: rgba(26, 15, 15, 0.85) !important;
+    border-left: 2px solid rgba(34, 139, 34, 0.3);
+}
+
+/* Títulos con fuente festiva */
+.title-31SJ6t,
+.name-28HaxV,
+.channelName-3KPsGw {
+    font-family: 'Mountains of Christmas', cursive;
+    color: var(--christmas-gold) !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Menciones con estilo navideño */
+.mention {
+    background: rgba(220, 38, 38, 0.3) !important;
+    color: var(--christmas-snow) !important;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+/* Emblemas y badges con brillo dorado */
+.profileBadges-2pItdR .profileBadge-2BqF-Z {
+    filter: drop-shadow(0 0 5px var(--christmas-gold));
+}
+
+/* Estado online con colores navideños */
+.status-1ibiUI[style*="background-color: rgb(35, 165, 90)"] {
+    background-color: var(--christmas-green) !important;
+}
+
+/* Modales con tema navideño */
+.modal-3Crloo,
+.root-g14mjS {
+    background: rgba(26, 15, 15, 0.95) !important;
+    border: 2px solid var(--christmas-gold);
+    box-shadow: 0 0 50px rgba(220, 38, 38, 0.5);
+}
+
+/* Popouts con decoración */
+.userPopout-2j1gM4,
+.userPopoutOuter-1R16gG {
+    background: rgba(15, 8, 8, 0.95) !important;
+    border: 2px solid rgba(34, 139, 34, 0.5);
+}
+
+/* Emojis y reacciones con efecto festivo */
+.reaction-3vwAF2:hover {
+    background: rgba(220, 38, 38, 0.2) !important;
+    transform: scale(1.1);
+}
+
+/* Dividers navideños */
+.divider-IqmEqJ {
+    border-color: rgba(255, 215, 0, 0.3) !important;
+}
+
+.divider-IqmEqJ span {
+    background: rgba(26, 15, 15, 0.9) !important;
+    color: var(--christmas-gold) !important;
+}
+
+/* Notificaciones con estilo festivo */
+.numberBadge-37OJ3S {
+    background: var(--christmas-red) !important;
+    border: 2px solid var(--christmas-gold) !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Animación de brillo para elementos importantes */
+@keyframes christmas-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+}
+
+/* Búsqueda con tema navideño */
+.searchBar-jGtisZ {
+    background: rgba(15, 8, 8, 0.8) !important;
+    border: 2px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Decoración de copos de nieve (opcional, puede afectar rendimiento) */
+.app-2CXKsg::after {
+    content: '❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️';
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    opacity: 0.3;
+    animation: snowfall 10s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+}
